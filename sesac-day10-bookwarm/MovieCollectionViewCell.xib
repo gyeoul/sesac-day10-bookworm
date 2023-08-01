@@ -33,11 +33,19 @@
                                 <rect key="frame" x="296" y="172.66666666666669" width="544" height="602.33333333333326"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUw-kO-zMv">
-                                <rect key="frame" x="8" y="8" width="832" height="156.66666666666666"/>
+                                <rect key="frame" x="8" y="8" width="675.33333333333337" height="156.66666666666666"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VnB-es-rPJ">
+                                <rect key="frame" x="683.33333333333337" y="8" width="156.66666666666663" height="156.66666666666666"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VnB-es-rPJ" secondAttribute="height" multiplier="1:1" id="m3y-Of-3BB"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
@@ -46,12 +54,15 @@
                             <constraint firstItem="AXz-Eg-ZnB" firstAttribute="top" secondItem="kUw-kO-zMv" secondAttribute="bottom" constant="8" id="H87-z2-8Bn"/>
                             <constraint firstItem="djV-Ic-Xna" firstAttribute="leading" secondItem="vR2-Bw-10Z" secondAttribute="leading" constant="8" id="Hxo-sy-Tcn"/>
                             <constraint firstItem="kUw-kO-zMv" firstAttribute="top" secondItem="vR2-Bw-10Z" secondAttribute="top" constant="8" id="NHF-k0-q12"/>
+                            <constraint firstItem="VnB-es-rPJ" firstAttribute="height" secondItem="kUw-kO-zMv" secondAttribute="height" id="QHO-MI-kE3"/>
                             <constraint firstItem="kUw-kO-zMv" firstAttribute="height" secondItem="vR2-Bw-10Z" secondAttribute="height" multiplier="0.2" id="SZd-bQ-C2E"/>
                             <constraint firstItem="AXz-Eg-ZnB" firstAttribute="leading" secondItem="djV-Ic-Xna" secondAttribute="trailing" constant="8" id="XvP-of-T0d"/>
                             <constraint firstAttribute="bottom" secondItem="AXz-Eg-ZnB" secondAttribute="bottom" constant="8" id="fnp-l8-12K"/>
                             <constraint firstAttribute="bottom" secondItem="djV-Ic-Xna" secondAttribute="bottom" constant="8" id="hfX-2f-7ft"/>
-                            <constraint firstAttribute="trailing" secondItem="kUw-kO-zMv" secondAttribute="trailing" constant="8" id="rcg-pv-dqS"/>
+                            <constraint firstItem="VnB-es-rPJ" firstAttribute="top" secondItem="vR2-Bw-10Z" secondAttribute="top" constant="8" id="qeh-Ef-UKm"/>
+                            <constraint firstItem="VnB-es-rPJ" firstAttribute="leading" secondItem="kUw-kO-zMv" secondAttribute="trailing" id="rcg-pv-dqS"/>
                             <constraint firstItem="kUw-kO-zMv" firstAttribute="leading" secondItem="vR2-Bw-10Z" secondAttribute="leading" constant="8" id="vtg-6p-v7j"/>
+                            <constraint firstAttribute="trailing" secondItem="VnB-es-rPJ" secondAttribute="trailing" constant="8" id="yof-y8-M4m"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -66,6 +77,7 @@
             <size key="customSize" width="1532" height="845"/>
             <connections>
                 <outlet property="bgView" destination="vR2-Bw-10Z" id="5h2-PL-r7K"/>
+                <outlet property="likeButton" destination="VnB-es-rPJ" id="9Px-CZ-xLp"/>
                 <outlet property="posterImageView" destination="AXz-Eg-ZnB" id="dJj-Ie-eOX"/>
                 <outlet property="rateLabel" destination="djV-Ic-Xna" id="KmU-Fv-i2I"/>
                 <outlet property="titleLabel" destination="kUw-kO-zMv" id="jc5-uz-FRy"/>
