@@ -13,6 +13,13 @@
 		458DDA232A77991C008784A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 458DDA212A77991C008784A5 /* Main.storyboard */; };
 		458DDA252A77991E008784A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 458DDA242A77991E008784A5 /* Assets.xcassets */; };
 		458DDA282A77991E008784A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 458DDA262A77991E008784A5 /* LaunchScreen.storyboard */; };
+		458DDA302A779994008784A5 /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DDA2F2A779994008784A5 /* MovieData.swift */; };
+		458DDA322A7799BF008784A5 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DDA312A7799BF008784A5 /* Movie.swift */; };
+		458DDA352A779A21008784A5 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DDA332A779A21008784A5 /* MovieCollectionViewCell.swift */; };
+		458DDA362A779A21008784A5 /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 458DDA342A779A21008784A5 /* MovieCollectionViewCell.xib */; };
+		458DDA382A779ABE008784A5 /* MovieListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DDA372A779ABE008784A5 /* MovieListCollectionViewController.swift */; };
+		458DDA3A2A77AEF5008784A5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DDA392A77AEF5008784A5 /* SearchViewController.swift */; };
+		458DDA3C2A77AEFF008784A5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DDA3B2A77AEFF008784A5 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		458DDA242A77991E008784A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		458DDA272A77991E008784A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		458DDA292A77991E008784A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		458DDA2F2A779994008784A5 /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
+		458DDA312A7799BF008784A5 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		458DDA332A779A21008784A5 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		458DDA342A779A21008784A5 /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionViewCell.xib; sourceTree = "<group>"; };
+		458DDA372A779ABE008784A5 /* MovieListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCollectionViewController.swift; sourceTree = "<group>"; };
+		458DDA392A77AEF5008784A5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		458DDA3B2A77AEFF008784A5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +74,16 @@
 				458DDA1D2A77991C008784A5 /* SceneDelegate.swift */,
 				458DDA1F2A77991C008784A5 /* ViewController.swift */,
 				458DDA212A77991C008784A5 /* Main.storyboard */,
+				458DDA392A77AEF5008784A5 /* SearchViewController.swift */,
+				458DDA3B2A77AEFF008784A5 /* DetailViewController.swift */,
+				458DDA372A779ABE008784A5 /* MovieListCollectionViewController.swift */,
+				458DDA332A779A21008784A5 /* MovieCollectionViewCell.swift */,
+				458DDA342A779A21008784A5 /* MovieCollectionViewCell.xib */,
 				458DDA242A77991E008784A5 /* Assets.xcassets */,
 				458DDA262A77991E008784A5 /* LaunchScreen.storyboard */,
 				458DDA292A77991E008784A5 /* Info.plist */,
+				458DDA2F2A779994008784A5 /* MovieData.swift */,
+				458DDA312A7799BF008784A5 /* Movie.swift */,
 			);
 			path = "sesac-day10-bookwarm";
 			sourceTree = "<group>";
@@ -128,6 +149,7 @@
 				458DDA282A77991E008784A5 /* LaunchScreen.storyboard in Resources */,
 				458DDA252A77991E008784A5 /* Assets.xcassets in Resources */,
 				458DDA232A77991C008784A5 /* Main.storyboard in Resources */,
+				458DDA362A779A21008784A5 /* MovieCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +160,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				458DDA3C2A77AEFF008784A5 /* DetailViewController.swift in Sources */,
 				458DDA202A77991C008784A5 /* ViewController.swift in Sources */,
+				458DDA302A779994008784A5 /* MovieData.swift in Sources */,
+				458DDA3A2A77AEF5008784A5 /* SearchViewController.swift in Sources */,
 				458DDA1C2A77991C008784A5 /* AppDelegate.swift in Sources */,
+				458DDA352A779A21008784A5 /* MovieCollectionViewCell.swift in Sources */,
+				458DDA382A779ABE008784A5 /* MovieListCollectionViewController.swift in Sources */,
 				458DDA1E2A77991C008784A5 /* SceneDelegate.swift in Sources */,
+				458DDA322A7799BF008784A5 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,9 +330,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.gyeoul.sesac-day10-bookwarm";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -330,9 +361,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.gyeoul.sesac-day10-bookwarm";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
