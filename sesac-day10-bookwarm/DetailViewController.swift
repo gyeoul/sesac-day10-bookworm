@@ -13,26 +13,28 @@ class DetailViewController: UIViewController {
     @IBOutlet var infoLabel: UILabel!
     @IBOutlet var rateLabel: UILabel!
     @IBOutlet var descTextView: UITextView!
+    @IBOutlet var posterImage: UIImageView!
+    @IBOutlet var headerBackground: UIView!
+    @IBOutlet var rateBackground: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         if let this = args {
-            title = this.title
+//            title = this.title
+            posterImage.image = UIImage(named: this.title)
             titleLabel.text = this.title
             infoLabel.text = "\(this.releaseDate) | \(this.runtime)분"
-            rateLabel.text = "☆ \(this.rate)"
+            rateLabel.text = "평균 ☆ \(this.rate)"
             descTextView.text = this.overview
         }
+        headerBackground.backgroundColor = .darkGray
+        rateBackground.backgroundColor = .white
+        rateBackground.layer.cornerRadius = 8
+        titleLabel.textColor = .white
+        titleLabel.font = .boldSystemFont(ofSize: 20)
+        infoLabel.textColor = .white
+        infoLabel.font = .systemFont(ofSize: 12)
+        rateLabel.textColor = .black
+        rateLabel.font = .systemFont(ofSize: 12)
         descTextView.isEditable = false
     }
-
-    /*
-     // MARK: - Navigation
-
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-     }
-     */
 }

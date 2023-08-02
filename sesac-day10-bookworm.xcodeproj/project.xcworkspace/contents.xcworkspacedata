@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:">
+      location = "self:/Users/gyeoul/dev/xcode/sesac-day10-bookworm/sesac-day10-bookworm.xcodeproj">
    </FileRef>
 </Workspace>

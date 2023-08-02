@@ -5,7 +5,7 @@
 //  Created by 박창현 on 2023.07.31.
 //
 
-import Foundation
+import UIKit
 
 struct Movie {
     let title:String
@@ -14,4 +14,5 @@ struct Movie {
     let overview:String
     let rate:Float
     var like:Bool = false
+    let color:UIColor
 }

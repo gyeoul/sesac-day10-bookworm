@@ -13,19 +13,23 @@ class MovieCollectionViewCell: UICollectionViewCell {
     @IBOutlet var rateLabel: UILabel!
     @IBOutlet var posterImageView: UIImageView!
     @IBOutlet var likeButton: UIButton!
-    
-    func update(movie:Movie) {
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
         titleLabel.textColor = .white
         rateLabel.textColor = .white
         likeButton.tintColor = .white
         likeButton.setTitle("", for: .normal)
-        
+    }
+
+    func update(movie: Movie) {
+        bgView.backgroundColor = movie.color
         if movie.like {
-            self.likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            self.likeButton.setImage(UIImage(systemName: "heart"), for: .highlighted)
+            likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            likeButton.setImage(UIImage(systemName: "heart"), for: .highlighted)
         } else {
-            self.likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
-            self.likeButton.setImage(UIImage(systemName: "heart.fill"), for: .highlighted)
+            likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            likeButton.setImage(UIImage(systemName: "heart.fill"), for: .highlighted)
         }
     }
 }

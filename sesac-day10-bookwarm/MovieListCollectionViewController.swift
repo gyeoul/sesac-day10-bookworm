@@ -19,8 +19,9 @@ class MovieListCollectionViewController: UICollectionViewController {
             collectionView.reloadData()
         }
     }
+
     @IBOutlet var navSearchButton: UIBarButtonItem!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
@@ -36,7 +37,7 @@ class MovieListCollectionViewController: UICollectionViewController {
         navSearchButton.image = UIImage(systemName: "magnifyingglass")
         navSearchButton.tintColor = .black
     }
-    
+
     @IBAction func searchButtonClicked(_ sender: UIBarButtonItem) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc: SearchViewController = storyBoard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
@@ -44,7 +45,7 @@ class MovieListCollectionViewController: UICollectionViewController {
         nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true)
     }
-    
+
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movie.movie.count
     }
@@ -73,16 +74,9 @@ class MovieListCollectionViewController: UICollectionViewController {
         vc.args = this
         navigationController?.pushViewController(vc, animated: true)
     }
-    
-    func getRandomColor() -> UIColor {
-        let randomRed = CGFloat(drand48() * 0.8 + 0.1)
-        let randomGreen = CGFloat(drand48() * 0.8 + 0.1)
-        let randomBlue = CGFloat(drand48() * 0.8 + 0.1)
-        return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
-    }
-    
+
     @objc
-    func heartButtonClick(_ sender:UIButton) {
+    func heartButtonClick(_ sender: UIButton) {
         movie.movie[sender.tag].like.toggle()
     }
 }
