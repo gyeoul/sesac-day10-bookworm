@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DiscoverTableViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class DiscoverTableViewController: UITableViewController {
     @IBOutlet var tableCollectionView: UICollectionView!
 
     var movie = MovieInfo() {
@@ -19,11 +19,17 @@ class DiscoverTableViewController: UITableViewController, UICollectionViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "둘러보기"
-        tableView.register(UINib(nibName: DiscoverTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: DiscoverTableViewCell.identifier)
+        tableView.register(
+            UINib(nibName: DiscoverTableViewCell.identifier, bundle: nil),
+            forCellReuseIdentifier: DiscoverTableViewCell.identifier
+        )
         tableView.rowHeight = UITableView.automaticDimension
         tableCollectionView.dataSource = self
         tableCollectionView.delegate = self
-        tableCollectionView.register(UINib(nibName: DiscoverTableCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: DiscoverTableCollectionViewCell.identifier)
+        tableCollectionView.register(
+            UINib(nibName: DiscoverTableCollectionViewCell.identifier, bundle: nil),
+            forCellWithReuseIdentifier: DiscoverTableCollectionViewCell.identifier
+        )
         configureTableCollectionViewLayout()
 //        tableCollectionView.
 //        cell item 사이즈에 맞춰 tableCollectionView 크기 조절..?
@@ -43,21 +49,6 @@ class DiscoverTableViewController: UITableViewController, UICollectionViewDelega
         cell.descLabel.text = "\(this.releaseDate.split(separator: ".")[0]) - \(this.rate)"
         cell.posterImage.image = UIImage(named: this.title)
 //        cell.backgroundUiView.backgroundColor = .systemOrange
-        return cell
-    }
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movie.movie.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DiscoverTableCollectionViewCell.identifier, for: indexPath) as? DiscoverTableCollectionViewCell
-        else {
-            return UICollectionViewCell()
-        }
-        let this = movie.movie[indexPath.row]
-        cell.titleLabel.text = this.title
-        cell.posterImage.image = UIImage(named: this.title)
         return cell
     }
 
@@ -83,10 +74,6 @@ class DiscoverTableViewController: UITableViewController, UICollectionViewDelega
 
 //    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {}
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        showModalPesent(collectionView, index: indexPath)
-    }
-
     func showModalPesent(_ view: UIView, index: IndexPath) {
         let this = movie.movie[index.row]
         // 다형성을 이용한 배경색 초기화
@@ -102,17 +89,29 @@ class DiscoverTableViewController: UITableViewController, UICollectionViewDelega
             return
         }
         let nav = UINavigationController(rootViewController: vc)
-//        네비바에 아이템 추가는 꼭 디테일 뷰에서 해주어야하나?
-//        하지만 네비뷰에서 추가할 경우 기존 네비바와 충돌 가능성이 있는데..
-//        nav.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked))
-//        nav.navigationBar.tintColor = .black
-//        잘 추가되지 않는다...
         vc.args = this
+        vc.presentationMode = .present
         present(nav, animated: true)
     }
+}
 
-    @objc
-    func closeButtonClicked() {
-        dismiss(animated: true)
+extension DiscoverTableViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return movie.movie.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DiscoverTableCollectionViewCell.identifier, for: indexPath) as? DiscoverTableCollectionViewCell
+        else {
+            return UICollectionViewCell()
+        }
+        let this = movie.movie[indexPath.row]
+        cell.titleLabel.text = this.title
+        cell.posterImage.image = UIImage(named: this.title)
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        showModalPesent(collectionView, index: indexPath)
     }
 }

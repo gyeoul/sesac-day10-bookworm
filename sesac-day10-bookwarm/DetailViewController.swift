@@ -8,6 +8,11 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    enum Presentation {
+        case push, present
+    }
+
+    var presentationMode: Presentation = .push
     var args: Movie? = nil
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var infoLabel: UILabel!
@@ -36,5 +41,14 @@ class DetailViewController: UIViewController {
         rateLabel.textColor = .black
         rateLabel.font = .systemFont(ofSize: 12)
         descTextView.isEditable = false
+        if presentationMode == .present {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked))
+        }
+        navigationController?.navigationBar.tintColor = .white
+    }
+
+    @objc
+    func closeButtonClicked() {
+        dismiss(animated: true)
     }
 }
