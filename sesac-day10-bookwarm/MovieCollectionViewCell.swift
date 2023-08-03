@@ -20,10 +20,14 @@ class MovieCollectionViewCell: UICollectionViewCell {
         rateLabel.textColor = .white
         likeButton.tintColor = .white
         likeButton.setTitle("", for: .normal)
+        bgView.layer.cornerRadius = 12
     }
 
     func update(movie: Movie) {
         bgView.backgroundColor = movie.color
+        posterImageView.image = UIImage(named: movie.title)
+        rateLabel.text = "\(movie.rate)"
+        titleLabel.text = movie.title
         if movie.like {
             likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
             likeButton.setImage(UIImage(systemName: "heart"), for: .highlighted)

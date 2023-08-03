@@ -290,7 +290,7 @@
                     <tabBarItem key="tabBarItem" title="메인화면" image="star.fill" catalog="system" id="Ima-AG-BuL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sz8-T2-RN1">
-                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
